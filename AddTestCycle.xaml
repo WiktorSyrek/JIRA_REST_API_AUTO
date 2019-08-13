@@ -1,0 +1,186 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AddCommentToIssue" this:AddCommentToIssue.in_sAuthorizationKey="c3lyZWsud0BwZy5jb206QzQ3eExmaDM4bWZXdUdLREowckM2OERE" this:AddCommentToIssue.in_sTestCycleName="Test Auto 5" this:AddCommentToIssue.in_sProjectId="10000" this:AddCommentToIssue.in_sVersionId="-1" this:AddCommentToIssue.in_sJWTToken="JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1NTcwNTg6MTRmZDcyMDktNTAwNS00YTc5LThiNjMtYTRkMTY3ZjljMDRhIiwicXNoIjoiZGM4ZTM3MDY5ZWRmYjE0YzUwNmVlNDdlMWM0NDgwYjUyZDEwNThlNDRlMjg0YTIwNzlhMzA1NzM2ZDI0OWEwYiIsImlzcyI6Ik5qWXhZMlEyT0dFdE56Vm1ZUzB6TldFM0xXRmxPVGt0TlRnM01HVmtOREJpTjJFeElEVTFOekExT0NVelFURTBabVEzTWpBNUxUVXdNRFV0TkdFM09TMDRZall6TFdFMFpERTJOMlk1WXpBMFlTQlZVMFZTWDBSRlJrRlZURlJmVGtGTlJRIiwiaWF0IjoxNTY1NjE1NTgzMTIyLCJleHAiOjE1NjU2MTU1ODY3MjJ9.A0yDLaL0H22U7MwbL3el981GczEa6uCzbPNeGxmsY2U" this:AddCommentToIssue.in_sZapiAccessKey="NjYxY2Q2OGEtNzVmYS0zNWE3LWFlOTktNTg3MGVkNDBiN2ExIDU1NzA1OCUzQTE0ZmQ3MjA5LTUwMDUtNGE3OS04YjYzLWE0ZDE2N2Y5YzA0YSBVU0VSX0RFRkFVTFRfTkFNRQ" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_sAuthorizationKey" Type="InArgument(x:String)" />
+    <x:Property Name="in_sTestCycleName" Type="InArgument(x:String)" />
+    <x:Property Name="in_sProjectId" Type="InArgument(x:String)" />
+    <x:Property Name="in_sVersionId" Type="InArgument(x:String)" />
+    <x:Property Name="in_sJWTToken" Type="InArgument(x:String)" />
+    <x:Property Name="in_sZapiAccessKey" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>522,1838</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>AddCommentToIssue_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="23">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="AddTestCycle" sap:VirtualizedContainerService.HintSize="482,1758" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="PSFr_JIRA_API_AddTestCycle" sap:VirtualizedContainerService.HintSize="444,1666" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Int32" Name="httpStatusCode" />
+        <Variable x:TypeArguments="njl:JObject" Name="requestJSON" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="406,209" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[requestJSON]" JsonString="{}{ &#xD;&#xA; 'name': 'Test Cycle', &#xD;&#xA; 'build': '', &#xD;&#xA; 'environment': '', &#xD;&#xA; 'description': '', &#xD;&#xA; 'startDate': '', &#xD;&#xA; 'endDate': '', &#xD;&#xA; 'versionId': -1, &#xD;&#xA; 'clearCustomFieldsFlag': true, &#xD;&#xA; 'projectId': 10000 &#xD;&#xA;}" />
+      <Assign sap:VirtualizedContainerService.HintSize="406,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="njl:JToken">[requestJSON("name")]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="njl:JToken">[in_sTestCycleName]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="406,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="njl:JToken">[requestJSON("projectId")]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="njl:JToken">[in_sProjectId]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="406,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign.To>
+          <OutArgument x:TypeArguments="njl:JToken">[requestJSON("versionId")]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="njl:JToken">[in_sVersionId]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Sequence sap:VirtualizedContainerService.HintSize="406,1025" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="httpResult" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:HttpClient ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" Body="[requestJSON.ToString]" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request" EndPoint="https://prod-api.zephyr4jiracloud.com/connect/public/rest/api/1.0/cycle" sap:VirtualizedContainerService.HintSize="368,22" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[httpResult]" StatusCode="[httpStatusCode]" TimeoutMS="6000">
+          <ui:HttpClient.Attachments>
+            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+          </ui:HttpClient.Attachments>
+          <ui:HttpClient.Cookies>
+            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+          </ui:HttpClient.Cookies>
+          <ui:HttpClient.Headers>
+            <InArgument x:TypeArguments="x:String" x:Key="Authorization">[in_sJWTtoken]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="zapiAccessKey">[in_sZapiAccessKey]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Content-Type">application/json</InArgument>
+          </ui:HttpClient.Headers>
+          <ui:HttpClient.Parameters>
+            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+          </ui:HttpClient.Parameters>
+          <ui:HttpClient.UrlSegments>
+            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+          </ui:HttpClient.UrlSegments>
+        </ui:HttpClient>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="368,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[httpStatusCode.ToString + &quot;: &quot; + httpResult.ToString]">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:LogMessage>
+        <Sequence DisplayName="save cycle id" sap:VirtualizedContainerService.HintSize="368,740" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="njl:JObject" Name="jsonIssues" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dtTestCyclesId" />
+            <Variable x:TypeArguments="sd:DataRow" Name="drTestCycle" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="330,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[jsonIssues]" JsonString="[httpResult]" />
+          <ui:BuildDataTable DataTable="[dtTestCyclesId]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="330,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Id&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+          <Assign sap:VirtualizedContainerService.HintSize="330,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataRow">[drTestCycle]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataRow">[dtTestCyclesId.NewRow()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="330,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Object">[drTestCycle(0)]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Object">[jsonIssues("id")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="330,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Object">[drTestCycle(1)]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Object">[jsonIssues("name")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:AddDataRow ArrayRow="{x:Null}" DataRow="[drTestCycle]" DataTable="[dtTestCyclesId]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="330,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+          <ui:AppendCsvFile Encoding="{x:Null}" DataTable="[dtTestCyclesId]" Delimitator="Comma" DisplayName="Append To CSV" FilePath="TestCyclesFromJira.csv" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="AppendCsvFile_1" />
+        </Sequence>
+      </Sequence>
+    </Sequence>
+  </Sequence>
+</Activity>

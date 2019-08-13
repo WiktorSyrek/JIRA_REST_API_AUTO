@@ -3,12 +3,20 @@
   "description": "Library for JIRA REST API auto",
   "main": "GenerateAuthKey.xaml",
   "dependencies": {
+    "Newtonsoft.Json": "11.0.2",
     "RestSharp": "106.3.1",
+    "System.Management.Automation": "6.1.7601.17515",
     "UiPath.Excel.Activities": "2.6.2",
+    "UiPath.FTP.Activities": "1.0.7053.27728",
     "UiPath.Mail.Activities": "1.5.1",
+    "UiPath.Script.Activities": "1.0.6710.16240",
     "UiPath.System.Activities": "19.7.0",
     "UiPath.UIAutomation.Activities": "19.7.0",
-    "UiPath.WebAPI.Activities": "1.4.2"
+    "UiPath.WebAPI.Activities": "1.4.2",
+    "UiPathTeam.Excel.Extensions.Activities": "1.0.7107.42453",
+    "UiPathTeam.File.Activities": "1.0.4",
+    "UiPathTeam.PDF.Extensions.Activities": "2.3.0",
+    "UiPathTeam.TwoStepAuthentication.Activities": "1.0.0.2"
   },
   "webServices": [],
   "schemaVersion": "4.0",
