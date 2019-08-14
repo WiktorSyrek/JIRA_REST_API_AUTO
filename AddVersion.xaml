@@ -1,40 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="AddVersion" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="AddVersion" this:AddVersion.in_sName="[(new Random).Next(1000)]" this:AddVersion.in_sServer="wiksyr1.atlassian.net" this:AddVersion.in_sAuthorizationKey="c3lyZWsud0BwZy5jb206QzQ3eExmaDM4bWZXdUdLREowckM2OERE" this:AddVersion.in_sProjectId="[&quot;10000&quot;]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_sDescription" Type="InArgument(njl:JToken)" />
     <x:Property Name="in_sName" Type="InArgument(njl:JToken)" />
-    <x:Property Name="in_sArchive" Type="InArgument(njl:JToken)" />
-    <x:Property Name="in_sReleased" Type="InArgument(njl:JToken)" />
-    <x:Property Name="in_sReleaseDate" Type="InArgument(njl:JToken)" />
-    <x:Property Name="in_sUserReleaseDate" Type="InArgument(njl:JToken)" />
-    <x:Property Name="in_sProjectKey" Type="InArgument(njl:JToken)" />
     <x:Property Name="in_sServer" Type="InArgument(x:String)" />
     <x:Property Name="in_sAuthorizationKey" Type="InArgument(x:String)" />
+    <x:Property Name="in_sProjectId" Type="InArgument(njl:JToken)" />
   </x:Members>
-  <this:AddVersion.in_sDescription>
-    <InArgument x:TypeArguments="njl:JToken" />
-  </this:AddVersion.in_sDescription>
-  <this:AddVersion.in_sName>
-    <InArgument x:TypeArguments="njl:JToken" />
-  </this:AddVersion.in_sName>
-  <this:AddVersion.in_sArchive>
-    <InArgument x:TypeArguments="njl:JToken" />
-  </this:AddVersion.in_sArchive>
-  <this:AddVersion.in_sReleased>
-    <InArgument x:TypeArguments="njl:JToken" />
-  </this:AddVersion.in_sReleased>
-  <this:AddVersion.in_sReleaseDate>
-    <InArgument x:TypeArguments="njl:JToken" />
-  </this:AddVersion.in_sReleaseDate>
-  <this:AddVersion.in_sUserReleaseDate>
-    <InArgument x:TypeArguments="njl:JToken" />
-  </this:AddVersion.in_sUserReleaseDate>
-  <this:AddVersion.in_sProjectKey>
-    <InArgument x:TypeArguments="njl:JToken" />
-  </this:AddVersion.in_sProjectKey>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>484,1428</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>484,1061</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddVersion_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -87,87 +61,47 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddVersion" sap:VirtualizedContainerService.HintSize="444,1348" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddVersion" sap:VirtualizedContainerService.HintSize="594,1873" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="PSFr_JIRA_API_AddComment" sap:VirtualizedContainerService.HintSize="406,1256" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="PSFr_JIRA_API_AddComment" sap:VirtualizedContainerService.HintSize="556,1781" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="httpResult" />
         <Variable x:TypeArguments="x:Int32" Name="httpStatusCode" />
-        <Variable x:TypeArguments="njl:JObject" Name="requestJSON" />
+        <Variable x:TypeArguments="njl:JObject" Name="resultJSON" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="368,179" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[requestJSON]" JsonString="{}{&#xD;&#xA;    'description': 'An excellent version',&#xD;&#xA;    'name': 'New Version 1',&#xD;&#xA;    'archived': false,&#xD;&#xA;    'released': true,&#xD;&#xA;    'releaseDate': '2010-07-06',&#xD;&#xA;    'userReleaseDate': '6/Jul/2010',&#xD;&#xA;    'project': 'PXA'&#xD;&#xA;}" />
-      <Assign sap:VirtualizedContainerService.HintSize="368,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="518,149" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[resultJSON]" JsonString="{}{&#xD;&#xA;  'archived': false,&#xD;&#xA;  'name': 'New Version 2',&#xD;&#xA;  'description': '',&#xD;&#xA;  'projectId': 10000, &#xD;&#xA;  'released': false&#xD;&#xA;}" />
+      <Assign sap:VirtualizedContainerService.HintSize="518,60" sap2010:WorkflowViewState.IdRef="Assign_11">
         <Assign.To>
-          <OutArgument x:TypeArguments="njl:JToken">[requestJSON("description")]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="njl:JToken">[in_sDescription]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="368,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-        <Assign.To>
-          <OutArgument x:TypeArguments="njl:JToken">[requestJSON("name")]</OutArgument>
+          <OutArgument x:TypeArguments="njl:JToken">[resultJSON("name")]</OutArgument>
         </Assign.To>
         <Assign.Value>
           <InArgument x:TypeArguments="njl:JToken">[in_sName]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="368,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign sap:VirtualizedContainerService.HintSize="518,60" sap2010:WorkflowViewState.IdRef="Assign_12">
         <Assign.To>
-          <OutArgument x:TypeArguments="njl:JToken">[requestJSON("archived")]</OutArgument>
+          <OutArgument x:TypeArguments="njl:JToken">[resultJSON("projectId")]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="njl:JToken">[in_sArchive]</InArgument>
+          <InArgument x:TypeArguments="njl:JToken">[in_sProjectId]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="368,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-        <Assign.To>
-          <OutArgument x:TypeArguments="njl:JToken">[requestJSON("released")]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="njl:JToken">[in_sReleased]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="368,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-        <Assign.To>
-          <OutArgument x:TypeArguments="njl:JToken">[requestJSON("releaseDate")]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="njl:JToken">[in_sReleaseDate]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="368,60" sap2010:WorkflowViewState.IdRef="Assign_6">
-        <Assign.To>
-          <OutArgument x:TypeArguments="njl:JToken">[requestJSON("userReleaseDate")]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="njl:JToken">[in_sUserReleaseDate]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="368,60" sap2010:WorkflowViewState.IdRef="Assign_10">
-        <Assign.To>
-          <OutArgument x:TypeArguments="njl:JToken">[requestJSON("project")]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="njl:JToken">[in_sProjectKey]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Sequence sap:VirtualizedContainerService.HintSize="368,245" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="execute request" sap:VirtualizedContainerService.HintSize="518,1300" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:HttpClient ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" Body="[requestJSON.ToString]" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request" EndPoint="[&quot;https://&quot;+in_sServer+&quot;/rest/api/2/version&quot;]" sap:VirtualizedContainerService.HintSize="330,22" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="PUT" Result="[httpResult]" StatusCode="[httpStatusCode]" TimeoutMS="6000">
+        <ui:HttpClient ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" Body="[resultJSON.ToString]" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request" EndPoint="https://wiksyr1.atlassian.net/rest/api/3/version" sap:VirtualizedContainerService.HintSize="480,22" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[httpResult]" StatusCode="[httpStatusCode]" TimeoutMS="6000">
           <ui:HttpClient.Attachments>
             <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
           </ui:HttpClient.Attachments>
@@ -175,7 +109,9 @@
             <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
           </ui:HttpClient.Cookies>
           <ui:HttpClient.Headers>
-            <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Basic " + in_sAuthorizationKey]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Content-Type">application/json</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Accept">application/json</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Authorization">Basic c3lyZWsud0BwZy5jb206QzQ3eExmaDM4bWZXdUdLREowckM2OERE</InArgument>
           </ui:HttpClient.Headers>
           <ui:HttpClient.Parameters>
             <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
@@ -184,7 +120,7 @@
             <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
           </ui:HttpClient.UrlSegments>
         </ui:HttpClient>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="330,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[httpStatusCode.ToString + &quot;: &quot; + httpResult.ToString]">
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="480,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[httpStatusCode.ToString + &quot;: &quot; + httpResult.ToString]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -192,6 +128,44 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:LogMessage>
+        <If sap2010:Annotation.AnnotationText="" Condition="[httpStatusCode &lt;&gt; 201]" sap:VirtualizedContainerService.HintSize="480,262" sap2010:WorkflowViewState.IdRef="If_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <Sequence sap:VirtualizedContainerService.HintSize="254,114" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TerminateWorkflow DisplayName="Terminate Workflow" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="Version was not added" />
+            </Sequence>
+          </If.Then>
+        </If>
+        <Sequence DisplayName="save the data" sap:VirtualizedContainerService.HintSize="480,713" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="njl:JObject" Name="responseJSON" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dtVersions" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="330,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_3" JsonObject="[resultJSON]" JsonString="[httpResult]" />
+          <ui:BuildDataTable DataTable="[dtVersions]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="330,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;id&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="330,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[resultJSON(&quot;id&quot;)]" />
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="dtVersions.Rows.Add(resultJSON(&quot;id&quot;), resultJSON(&quot;name&quot;))" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="330,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+            <ui:InvokeCode.Arguments>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dtVersions">[dtVersions]</InOutArgument>
+              <InArgument x:TypeArguments="njl:JObject" x:Key="resultJSON">[resultJSON]</InArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+          <ui:AppendCsvFile Encoding="{x:Null}" DataTable="[dtVersions]" Delimitator="Comma" DisplayName="Append To CSV" FilePath="Versions.csv" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="AppendCsvFile_1" />
+        </Sequence>
       </Sequence>
     </Sequence>
   </Sequence>
